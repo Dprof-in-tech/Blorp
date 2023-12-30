@@ -268,7 +268,7 @@ main .fish-image{
         opacity: 0;
     }
     50% {
-        transform: translateY(-80vh) scale(0.7);
+        transform: translateY(-50vh) scale(0.5);
         opacity: 0.6;
     }
     100% {
