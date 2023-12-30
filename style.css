@@ -357,13 +357,13 @@ main .fish-image{
         transform: translateX(0) translateY(0) scaleX(1); /* Start and end position */
     }
     50% {
-        transform: translateX(-80vw) translateY(200px) scaleX(-1); /* Re-enter from the right */
+        transform: translateX(-80vw) translateY(150px) scaleX(-1); /* Re-enter from the right */
     }
     50.1%{
         transform: scale(1);
     }
     50.2%, 50.3% {
-        transform: translateX(55vw) translateY(20vh) scaleX(1); /* Swim back to the left */
+        transform: translateX(55vw) translateY(10vh) scaleX(1); /* Swim back to the left */
     }
     100%{
         transform: translateX(0px) translateY(0px) scale(1);
