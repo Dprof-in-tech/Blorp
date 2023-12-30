@@ -372,7 +372,7 @@ main .fish-image{
 
 }
 
-@media screen and (min-width: 769px) and (max-width: 1019px){
+@media screen and (min-width: 769px) and (max-width: 1100px){
     nav .navbar-right{
         display: none;
     }
@@ -403,4 +403,52 @@ main .fish-image{
         font-family:"JetBrains Mono", serif;
         max-width: 100%;
     }   
+
+    .fish-image .swim-left{
+        opacity: 0.5;
+        animation: swim-left 15s infinite linear;
+        transform-origin: center; /* Set the transformation origin to the center */
+    }
+    
+    .fish-image .swim-right {
+        opacity: 0.5;
+        animation: swim-right 15s infinite linear;
+        transform-origin: center; /* Set the transformation origin to the center */
+    }
+    
+@keyframes swim-right {
+    0%, 100% {
+        transform: translateX(0) translateY(0) scaleX(1); /* Start and end position */
+    }
+    50% {
+        transform: translateX(40vw) translateY(150px) scaleX(1); /* Move to the right */
+    }
+    50.1% {
+        transform: scaleX(-1); /* Immediate flip without translation */
+    }
+    50.2%, 50.8% {
+        transform: translateX(-80vw) translateY(0) scaleX(-1); /* Final position after flip */
+    }
+    100%{
+        transform: translateX(0px) translateY(0px) scale(1);
+    }
+}
+
+@keyframes swim-left {
+    0%, 100% {
+        transform: translateX(0) translateY(0) scaleX(1); /* Start and end position */
+    }
+    50% {
+        transform: translateX(-80vw) translateY(150px) scaleX(-1); /* Re-enter from the right */
+    }
+    50.1%{
+        transform: scale(1);
+    }
+    50.2%, 50.3% {
+        transform: translateX(55vw) translateY(0) scaleX(1); /* Swim back to the left */
+    }
+    100%{
+        transform: translateX(0px) translateY(0px) scale(1);
+    }
+}
 }
