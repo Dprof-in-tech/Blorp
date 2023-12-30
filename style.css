@@ -1,0 +1,321 @@
+body{
+    background-image: url('img/sea-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: fill;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.content-container{
+    background-color: rgba(10, 71, 141, 0.7);
+    width: 100%;
+    height: 100%;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 8vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    background-color: rgba(10, 71, 141, 0.8);
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+}
+nav .navbar-left{
+    font-family: "Sofia", sans-serif;
+    font-size: 1.5rem;
+    width: 30%;
+    margin-left: 1.5rem;
+}
+
+.navbar-left a{
+    animation: rainbow 2s infinite alternate;
+}
+
+@keyframes rainbow {
+    1%{
+        color: orange;
+    }
+    15%{
+        color: rgba(10, 71, 141, 0.7);
+    }
+    30%{
+        color: aquamarine;
+    }
+    50%{
+        color: pink;
+    }
+    70%{
+        color: yellow;
+    }
+    85%{
+        color: red;
+    }
+    100%{
+        color: blueviolet;
+    }
+
+    
+}
+
+nav .navbar-right{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 3rem;
+    align-items: center;
+}
+
+.menu-icon {
+    cursor: pointer;
+    display: none;
+    /* Style your menu icon as needed */
+}
+
+.navbar-modal {
+    display: none;
+    /* Style your navbar modal as needed */
+}
+
+.navbar-modal.active {
+    display: flex;
+    border: none;
+    border-radius: 8px;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-evenly;
+    position: absolute;
+    z-index: 1;
+    top: 80%;
+    width: 50%;
+    left: 40%;
+    padding: 1rem;
+    background-color: rgba(2, 47, 99, 0.9);
+    /* Additional styles to make the navbar visible */
+}
+.navbar-modal.active span a{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    gap: 0.5rem;
+    width: fit-content;
+}
+
+.navbar-modal.active span{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    align-items: start;
+}
+nav .navbar-right span a{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+    width: fit-content;
+}
+
+
+nav .navbar-right span{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 2rem;
+    align-items: center;
+}
+
+main .fish-image{
+    width: 15vw;
+    height: fit-content;
+    position: absolute;
+    top: 10%;
+}
+
+
+.fish-image img{
+    height: 100%;
+    width: 100%;
+    opacity: 0.5;
+}
+
+/* Add your existing CSS styles */
+
+/* Hide the default images initially */
+
+.fish-image .swim-left{
+    opacity: 0.5;
+    animation: swim-left 30s infinite linear;
+    transform-origin: center; /* Set the transformation origin to the center */
+}
+
+.fish-image .swim-right {
+    opacity: 0.5;
+    animation: swim-right 30s infinite linear;
+    transform-origin: center; /* Set the transformation origin to the center */
+}
+
+@keyframes swim-right {
+    0%, 100% {
+        transform: translateX(0) translateY(0) scaleX(1); /* Start and end position */
+    }
+    50% {
+        transform: translateX(100vw) translateY(100px) scaleX(1); /* Move to the right */
+    }
+    50.1% {
+        transform: scaleX(-1); /* Immediate flip without translation */
+    }
+    50.2%, 50.8% {
+        transform: translateX(-100vw) translateY(0) scaleX(-1); /* Final position after flip */
+    }
+    100%{
+        transform: translateX(0px) translateY(0px) scale(1);
+    }
+}
+
+@keyframes swim-left {
+    0%, 100% {
+        transform: translateX(0) translateY(0) scaleX(1); /* Start and end position */
+    }
+    50% {
+        transform: translateX(-100vw) translateY(150px) scaleX(-1); /* Re-enter from the right */
+    }
+    50.1%{
+        transform: scale(1);
+    }
+    50.2%, 50.3% {
+        transform: translateX(100vw) translateY(50px) scaleX(1); /* Swim back to the left */
+    }
+    100%{
+        transform: translateX(0px) translateY(0px) scale(1);
+    }
+}
+
+
+.message{
+    height: 45vh;
+    width: 45vw;
+    position: relative;
+    left: 15%;
+    top: 7rem;
+    transition: margin-left 0.5s ease-in-out;
+}
+
+.message *{
+    text-align: center;
+    color: white;
+    font-family:"JetBrains Mono", serif;
+    max-width: 85%;
+}
+
+.message h1{
+    font-size: 2.5rem;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.message p{
+    font-size: 1.4rem;
+}
+
+.about-blorp {
+    transform: translateY(50px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+
+/* Existing CSS stays the same */
+
+/* Add media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    nav .navbar-right{
+        display: none;
+    }
+
+    nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav .menu-icon{
+        margin-right: 2rem;
+        display: block;
+    }
+
+    main .fish-image{
+        width: 45vw;
+        height: fit-content;
+        position: absolute;
+        top: 10%;
+    }
+    
+    .message{
+        height: 45vh;
+        width: 90vw;
+        position: relative;
+        left: 5%;
+        top: 10rem;
+        transition: margin-left 0.5s ease-in-out;
+    }
+    
+    .message *{
+        text-align: center;
+        color: white;
+        font-family:"JetBrains Mono", serif;
+        max-width: 100%;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1019px){
+    nav .navbar-right{
+        display: none;
+    }
+
+    nav .menu-icon{
+        display: block;
+    }
+
+    main .fish-image{
+        width: 22vw;
+        height: fit-content;
+        position: absolute;
+        top: 10%;
+    }
+    
+    .message{
+        height: 45vh;
+        width: 70vw;
+        position: relative;
+        left: 6%;
+        top: 10rem;
+        transition: margin-left 0.5s ease-in-out;
+    }
+    
+    .message *{
+        text-align: center;
+        color: white;
+        font-family:"JetBrains Mono", serif;
+        max-width: 100%;
+    }   
+}
