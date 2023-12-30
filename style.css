@@ -363,7 +363,7 @@ main .fish-image{
         transform: scale(1);
     }
     50.2%, 50.3% {
-        transform: translateX(55vw) translateY(10vh) scaleX(1); /* Swim back to the left */
+        transform: translateX(55vw) translateY(0) scaleX(1); /* Swim back to the left */
     }
     100%{
         transform: translateX(0px) translateY(0px) scale(1);
