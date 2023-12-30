@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 break;
             case 1: // Second div, display 300px to the right for laptop screens
                 aboutBlorpDivs[index].style.display = 'block';
-                if (window.innerWidth > 1020) {
+                if (window.innerWidth > 1100) {
                     message.style.marginLeft = '40%';
                 } else {
                     message.style.marginLeft = '0px';
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 break;
             case 3: // Fourth div, display at the same position as the second div for laptop screens
                 aboutBlorpDivs[index].style.display = 'block';
-                if (window.innerWidth > 1020) {
+                if (window.innerWidth > 1100) {
                     message.style.marginLeft = '40%';
                 } else {
                     message.style.marginLeft = '0px';
