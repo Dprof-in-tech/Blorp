@@ -66,7 +66,7 @@ function createBubble(xPos, yPos, size) {
             { transform: 'translate(0, -100px) scale(1)' },
         ],
         {
-            duration: Math.random() * 8000 + 2000,
+            duration: Math.random() * 8000 + 4000,
             easing: 'linear',
             iterations: Infinity,
         }
@@ -86,4 +86,4 @@ function createBubbles() {
 }
 
 createBubbles();
-setInterval(createBubbles, 2000);
+setInterval(createBubbles, 4000);
