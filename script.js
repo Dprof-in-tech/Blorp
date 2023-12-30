@@ -53,21 +53,20 @@ function toggleNavbar() {
 function createBubble(xPos, yPos, size) {
     const bubble = document.createElement('div');
     bubble.classList.add('bubble');
-
     bubble.style.left = `${xPos}px`;
     bubble.style.top = `${yPos}px`;
     bubble.style.width = `${size}px`;
     bubble.style.height = `${size}px`;
 
-    document.getElementById('bubbleContainer').appendChild(bubble);
+    document.body.appendChild(bubble); // Append to the body
 
     bubble.animate(
         [
-            { transform: `translate(0, 0) scale(0)` },
-            { transform: `translate(0, -100px) scale(1)` },
+            { transform: 'translate(0, -50px) scale(0)' },
+            { transform: 'translate(0, -100px) scale(1)' },
         ],
         {
-            duration: Math.random() * 8000 + 4000,
+            duration: Math.random() * 8000 + 2000,
             easing: 'linear',
             iterations: Infinity,
         }
@@ -75,19 +74,16 @@ function createBubble(xPos, yPos, size) {
 }
 
 function createBubbles() {
-    // Center bubble
-    createBubble(window.innerWidth / 2, window.innerHeight + 50, Math.random() * 30 + 10);
+    const positions = [
+        { x: window.innerWidth / 2, y: window.innerHeight + 50 },
+        { x: 50, y: window.innerHeight + 50 },
+        { x: window.innerWidth - 50, y: window.innerHeight + 50 },
+    ];
 
-    // Left bubble
-    createBubble(50, window.innerHeight + 50, Math.random() * 30 + 10);
-
-    // Right bubble
-    createBubble(window.innerWidth - 50, window.innerHeight + 50, Math.random() * 30 + 10);
+    positions.forEach(({ x, y }) => {
+        createBubble(x, y, Math.random() * 30 + 10);
+    });
 }
 
-function generateRippleEffect() {
-    // Add code for the ripple effect
-}
-
-setInterval(createBubbles, 5000); // Create bubbles every 5 seconds
-generateRippleEffect(); // Call the function to generate the ripple effect
+createBubbles();
+setInterval(createBubbles, 2000);
