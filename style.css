@@ -302,7 +302,7 @@ main .fish-image{
 
     main .fish-image{
         width: 45vw;
-        height: fit-content;
+        height: 11vh;
         position: absolute;
         top: 10%;
     }
