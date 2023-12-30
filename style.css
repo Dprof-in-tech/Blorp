@@ -179,13 +179,13 @@ main .fish-image{
         transform: translateX(0) translateY(0) scaleX(1); /* Start and end position */
     }
     50% {
-        transform: translateX(100vw) translateY(100px) scaleX(1); /* Move to the right */
+        transform: translateX(95vw) translateY(100px) scaleX(1); /* Move to the right */
     }
     50.1% {
         transform: scaleX(-1); /* Immediate flip without translation */
     }
     50.2%, 50.8% {
-        transform: translateX(-100vw) translateY(0) scaleX(-1); /* Final position after flip */
+        transform: translateX(-95vw) translateY(0) scaleX(-1); /* Final position after flip */
     }
     100%{
         transform: translateX(0px) translateY(0px) scale(1);
@@ -197,13 +197,13 @@ main .fish-image{
         transform: translateX(0) translateY(0) scaleX(1); /* Start and end position */
     }
     50% {
-        transform: translateX(-100vw) translateY(150px) scaleX(-1); /* Re-enter from the right */
+        transform: translateX(-95vw) translateY(150px) scaleX(-1); /* Re-enter from the right */
     }
     50.1%{
         transform: scale(1);
     }
     50.2%, 50.3% {
-        transform: translateX(100vw) translateY(50px) scaleX(1); /* Swim back to the left */
+        transform: translateX(95vw) translateY(50px) scaleX(1); /* Swim back to the left */
     }
     100%{
         transform: translateX(0px) translateY(0px) scale(1);
