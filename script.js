@@ -62,7 +62,7 @@ function createBubble(xPos, yPos, size) {
 
     bubble.animate(
         [
-            { transform: 'translate(0, -50px) scale(0)' },
+            { transform: 'translate(0, 0px) scale(0)' },
             { transform: 'translate(0, -100px) scale(1)' },
         ],
         {
